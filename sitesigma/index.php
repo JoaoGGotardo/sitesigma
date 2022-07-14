@@ -1,6 +1,5 @@
 <?php
-include_once './inlcudes/_banco.php';
-include_once './includes/_dados.php';
+include_once './includes/_banco.php';
 include_once './includes/_head.php';
 include_once './includes/_header.php';
 ?>
@@ -10,7 +9,23 @@ include_once './includes/_header.php';
 <div class="container">
     <div class="row">
         <?php
+        //cria variavel de SQL executado 
+        $sql = "SELECT * FROM categorias WHERE Ativo = 1";
+
+        //executa o comando SQL
+        $exec = mysqli_query($conn, $sql);
+
+        //informar quantidade de registros de dados
+        $numProdutos = mysqli_num_rows($exec);
+
+        //dados extraidos do banco
+        while ($dados = mysqli_fetch_assoc($exec)){
+            echo '<h1>'.$dados['Nome'].'</h1>';
+
+        }
         
+
+        // repeticao
         for ($i=0; $i < 3; $i++) {      
 
         ?>    

@@ -24,3 +24,7 @@
 </body>
 
 </html>
+<?php
+//fechamento da conexao com o _banco 
+mysqli_close($conn);
+?>

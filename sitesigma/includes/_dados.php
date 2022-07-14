@@ -1,7 +1,7 @@
 <?php
 
 $produtos = array(
-    0 => array('nome' =>'Bulbassar','preco'=>'0.99','descricao'=>'bulbassar legal','imagem'=>'bulbasar.png'),
+    0 => array('nome' =>'Bulbasaur','preco'=>'0.99','descricao'=>'bulbassar legal','imagem'=>'bulbasar.png'),
     1 => array('nome' =>'Squirtle','preco'=>'1.00','descricao'=>'squirtle legal','imagem'=>'squirtle.png'),
     2 => array('nome' =>'ratata','preco'=>'9999.00','descricao'=>'ratata legal','imagem'=>'ratata.png'),
     3 => array('nome' =>'Jigglypuff','preco'=>'1200.00','descricao'=>'jigglypuff Legal','imagem'=>'jiggly.png'),
