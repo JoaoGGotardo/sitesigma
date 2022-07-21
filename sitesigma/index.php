@@ -4,13 +4,13 @@ include_once './includes/_head.php';
 include_once './includes/_header.php';
 ?>
 
-<h1>Home</h1>
+<h1>Index</h1>
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <?php
         //cria variavel de SQL executado 
-        $sql = "SELECT * FROM categorias WHERE Ativo = 1";
+        $sql = "SELECT * FROM produtos WHERE Ativo = 1 ORDER BY ProdutoID LIMIT 3";
 
         //executa o comando SQL
         $exec = mysqli_query($conn, $sql);
@@ -20,22 +20,15 @@ include_once './includes/_header.php';
 
         //dados extraidos do banco
         while ($dados = mysqli_fetch_assoc($exec)){
-            echo '<h1>'.$dados['Nome'].'</h1>';
-
-        }
-        
-
-        // repeticao
-        for ($i=0; $i < 3; $i++) {      
 
         ?>    
 
         <div class="card mr-3 mt-3" style="width: 18rem;">
-            <img src="./content/<?php echo $produtos [$i]['imagem']?>" class="card-img-top" alt="...">
+            <img src="./content/<?php echo $dados ['Imagem'];?>" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $produtos [$i]['nome']?></h5>
-                <p class="card-text"><?php echo $produtos [$i]['descricao']?></p>
-                <a href="produto-detalhe.php?id=<?php echo $i?>" class="btn btn-primary">Detalhe</a>
+                <h5 class="card-title"><?php echo $dados ['Nome'];?></h5>
+                <p class="card-text"><?php echo $dados ['Descricao'];?></p>
+                <a href="produto-detalhe.php?id=<?php echo $dados['ProdutoID'];?>&tipo" class="btn btn-primary">Detalhe</a>
             </div>
         </div>
 

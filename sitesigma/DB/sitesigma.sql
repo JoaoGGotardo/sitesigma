@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jul-2022 às 16:40
+-- Tempo de geração: 21-Jul-2022 às 17:21
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -41,13 +41,7 @@ INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
 (1, 'Carros', 1),
 (2, 'Flores', 1),
 (3, 'Lol', 1),
-(4, 'Doggos', 1),
-(5, 'Costa_lesado', 1),
-(6, 'Php_God', 1),
-(7, 'Não_sei', 1),
-(8, 'Sem_criatividade:/', 1),
-(9, 'Mais_2', 1),
-(10, 'Só_mais_1', 1);
+(4, 'Doggos', 1);
 
 -- --------------------------------------------------------
 
@@ -64,6 +58,16 @@ CREATE TABLE `produtos` (
   `CategoriaID` int(11) NOT NULL,
   `Ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `Imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES
+(1, 'Bulbasaur', 'Descrição do Bulbasaur ', 'bulbasar.png', 0.99, 1, 1),
+(2, 'Squirtle', 'Descrição do Squirtle', 'squirtle.png', 1, 1, 1),
+(3, 'Ratata', 'Descrição do Ratata', 'ratata.png', 9999, 1, 1),
+(4, 'Jigglypuff', 'Descrição do Jigglypuff', 'jiggly.png', 1200, 1, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -95,7 +99,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

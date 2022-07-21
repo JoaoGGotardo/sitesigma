@@ -1,4 +1,7 @@
 <?php
+include_once './inlcudes/_banco.php';
+?>
+<?php
 
 $produtos = array(
     0 => array('nome' =>'Bulbasaur','preco'=>'0.99','descricao'=>'bulbassar legal','imagem'=>'bulbasar.png'),
@@ -24,6 +27,14 @@ $produtos = array(
     20=> array('nome' =>'Bulbassar','preco'=>'0.99','descricao'=>'bulbassar legal','imagem'=>'bulbasar.png'),
 );
 
-
+$sqlStr = "";
+foreach ($produtos as $key => $value){
+    $nome = $value ['nome'];
+    $descricao = $value ['descricao'];
+    $imagem = $value ['imagem'];
+    $preco = $value ['preco'];
+    $sqlStr = "<br>INSERT INTO `produtos` (`Nome`, `Descricao`, `Imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES ('$nome', '$descricao', '$imagem', '$preco', 1, 1);";
+    echo $sqlStr;
+}
 
 ?>
